@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Lift -GO</title>
+        <style>
+            .loading {
+              border: 16px solid #f3f3f3; /* Light grey */
+              border-top: 16px solid #3498db; /* Blue */
+              border-radius: 50%;
+              width: 120px;
+              height: 120px;
+              animation: spin 2s linear infinite;
+            }
+      
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+/* body{
+  background-color: red;
+} */
+            
+</style>
+</head>
+<body>
+  <h1>Lift.Go</h1>
+  <hr style="size:10px;">
+  <img src="" alt="">
+  <h3 style="position:absolute;top:20px;left:500px">Where would You Like to Go?<h3>
+  
+    <form action="/search" method="get" style="position:absolute;top:80px;left:500px">
+      <input type="text" name="q" placeholder="Enter a location">
+      <button type="submit">Search</button>
+  </form>
+
+
+    <a href="Berea/pEPWva Berea.html">
+      <img src="BEREA.PNG" alt="">
+    </a>
+    
+<a href="Hillbrow/pEPWva Hillbrow.html">
+  <img src="Hillbrow.PNG" alt="">
+</a>
+
+  
+  <a href="Yeoville/pEPWvaYeoville.html">
+    <img src="Yeoville.PNG" alt="">
+  </a>
+
+  <a href="Rossentenville/pEPWva Rossentenville.html">
+    <img src="Rossentenville.PNG" alt="">
+  </a>
+  <a href="Town/pEPWva Town.html">
+    <img src="Town.PNG" alt="">
+  </a>
+  <a href="Braamfontein/pEPWva Braamfontein.html">
+    <img src="Braamfontein.PNG" alt="">
+  </a>
+  
+  <a href="Sandton/pEPWva sandton.html">
+    <img src="Sandton.PNG" alt="">
+  </a>
+  <a href="Kempton park/pEPWva Kempton park.html">
+    <img src="Kempton park.PNG" alt="">
+  </a>
+  <a href="kensington/pEPWva kensington.html">
+    <img src="Kengiston.PNG" alt="">
+  </a>
+  <a href="">
+
+  
+  
+  
+  <!--Script for the Loading Page when Clicked-->
+  <script>
+      function showLoadingAnimation() {
+        // Get the button and the loading animation elements
+        const button = document.getElementById('load-btn');
+        const loadingAnimation = document.createElement('div');
+  
+        // Add the 'loading' class to the loading animation element
+        loadingAnimation.classList.add('loading');
+  
+        // Replace the button with the loading animation
+        button.replaceWith(loadingAnimation);
+  
+        // Wait for 20 seconds before going to the next page
+        setTimeout(() => {
+          window.location.href = 'next-page.html';
+        }, 20000); // 20 seconds
+      }
+  
+      // Add an event listener to the button
+      const button = document.getElementById('load-btn');
+      button.addEventListener('click', showLoadingAnimation);
+    </script>
+  <p style="position: absolute;top:600px;left:600px;">Copy right©2023 </p>
+      
+</body>
+
+
+</html>
