@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://cdpn.io/sfrisk/fullpage/pEPWva?anon=true&view= -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  <title>CodePen - Loading Screen</title>
+  
+  <link rel="stylesheet" href="./normalize.min.css">
+
+  
+  
+<style>
+html, body {
+  height: 100%;
+}
+
+.content {
+  background: #9C27B0;
+  animation: hue 10s linear infinite;
+  min-height: 100%;
+}
+
+.loader {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 2em;
+  top: 50%;
+  margin-top: -1em;
+}
+.loader_letter {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  padding: 0 .2em;
+  font-size: 2em;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  animation: bounce 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite alternate;
+}
+.loader_letter:nth-child(1) {
+  animation-delay: 0s;
+}
+.loader_letter:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.loader_letter:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.loader_letter:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.loader_letter:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.loader_letter:nth-child(6) {
+  animation-delay: 0.25s;
+}
+.loader_letter:nth-child(7) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-1em);
+  }
+}
+@keyframes hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+<script>
+		function delayNextPage() {
+			setTimeout(function() {
+				window.location.href = "2.html";
+			}, 3000); // 30 second delay
+		}
+	</script>
+  
+  
+</head>
+
+<body translate="no" onload="delayNextPage()">
+  <div class="content">
+  <div class="loader"><span class="loader_letter">L</span><span class="loader_letter">o</span><span class="loader_letter">a</span><span class="loader_letter">d</span><span class="loader_letter">i</span><span class="loader_letter">n</span><span class="loader_letter">g</span></div>
+</div>
+  
+  <p style="position:absolute;top:500px;left:1250px;color:gray;">An  uncle powered software</p>
+  
+  <h1 style="color:grey; position:absolute;top:200px;left:600px;">Kensington</h1>
+
+
+</body>
+</html>
