@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Another Page</title>
+</head>
+<body>
+  <script>
+    // Get the URL from the query parameter
+    var url = decodeURIComponent(getUrlParameter("url"));
+
+    // Load the URL in the current page
+    window.location.href = url;
+
+    // Helper function to get query parameters from the URL
+    function getUrlParameter(name) {
+      name = name.replace(/[[]/, "\\[").replace(/[]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+      var results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/+/g, " "));
+    }
+  </script>
+</body>
+</html>
