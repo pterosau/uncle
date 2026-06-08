@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... your existing head section ... -->
+</head>
+<body>
+    <h1>Welcome to the Dashboard, <?php echo $_SESSION['username']; ?>!</h1>
+    
+    <!-- Display a panel with files from the user's folder -->
+    <div class="file-panel">
+        <h2>Your Files</h2>
+        <?php
+            $username = $_SESSION['username'];
+            $userFolder = "uploads/$username";
+            $files = scandir($userFolder);
+            foreach ($files as $file) {
+                if ($file != '.' && $file != '..') {
+                    echo "<p>$file</p>";
+                }
+            }
+        ?>
+    </div>
+
+    <!-- ... your existing body section ... -->
+</body>
+</html>

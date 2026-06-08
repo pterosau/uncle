@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print From USB</title>
+<style>
+  /* Add your CSS styles here */
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="split left">
+  <div class="centered">
+    <h1  style="position:absolute;top: -27px;left:500px;">Print From USB</h1>
+    <img src="usb.png" alt="USB Drive" height="100" width="100" style="position:absolute;top: 20px;left:400px;">
+    
+    <input type="file" id="fileInput" style="display: none;">
+    <button onclick="openFileExplorer()"  style="position:absolute;top: 80px;left:580px;">Select file</button><br><br><br><br><br><br>
+    <iframe id="fileFrame" style="width: 100%; height: 500px; border: 1px solid #ccc;"></iframe>
+  </div>
+</div>
+<img id="arrowDown" class="hidden" src="arrow down.gif" alt="Arrow Down" height="100" width="100" style="position:absolute;top: 40px;left:1100px;" >
+<div class="split right">
+  <div class="centered">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+function openFileExplorer() {
+    // Trigger click event on the hidden file input element
+    document.getElementById('fileInput').click();
+}
+
+// Listen for change event when user selects files
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    // Access the selected file using event.target.files
+    var file = event.target.files[0];
+    
+    // Show the arrow down image
+    document.getElementById('arrowDown').classList.remove('hidden');
+    
+    // Check if file is selected
+    if (file) {
+        // If file is an image (JPEG or PNG), convert it to PDF
+        if (file.type === 'image/jpeg' || file.type === 'image/png') {
+            convertImageToPdf(file);
+        } else {
+            // Otherwise, display the file directly in the iframe
+            displayFile(file);
+        }
+    }
+});
+
+function convertImageToPdf(imageFile) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var imageData = e.target.result;
+        var pdf = new jsPDF();
+        pdf.addImage(imageData, 'JPEG', 0, 0);
+        var pdfData = pdf.output('datauristring');
+        displayPdf(pdfData);
+    };
+    reader.readAsDataURL(imageFile);
+}
+
+function displayPdf(pdfData) {
+    document.getElementById('fileFrame').src = pdfData;
+}
+
+function displayFile(file) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var fileContent = e.target.result;
+        document.getElementById('fileFrame').src = fileContent;
+    };
+    reader.readAsDataURL(file);
+}
+</script>
+
+</body>
+</html>

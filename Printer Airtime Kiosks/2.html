@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #print-button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Print Page</h1>
+
+    h1>Display Files</h1>
+    <label for="file-input">Choose File(s):</label>
+    <input type="file" id="file-input" multiple style="display:none">
+
+    <ul id="file-list"></ul>
+
+    <button onclick="openFileExplorer()">Select Files</button>
+
+    <script>
+        function openFileExplorer() {
+            document.getElementById('file-input').click();
+        }
+
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const fileList = event.target.files;
+            const fileListContainer = document.getElementById('file-list');
+
+            // Clear existing list items
+            fileListContainer.innerHTML = '';
+
+            // Display each selected file
+            for (let i = 0; i < fileList.length; i++) {
+                const listItem = document.createElement('li');
+                listItem.textContent = fileList[i].name;
+                fileListContainer.appendChild(listItem);
+            }
+        });
+    </script>
+
+</body>
+</html>
