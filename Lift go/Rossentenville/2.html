@@ -1,0 +1,57 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1>Which Location in Rossentenville?</h1>
+
+    <a href="#" onclick="openLink()">
+      <img src="Abel and lily.PNG" alt="">
+    </a>
+    
+    <script>
+      function openLink() {
+        // Create an invisible iframe
+        var iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+    
+        // Set the URL link as the iframe source
+        iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLSeomBKmIeTanBLSNKAxXqaS2U82KRF8m7q1K8doVvt8yXD8TA/formResponse?entry.62827259=Justine+Makhurupetsi";
+    
+        // Append the iframe to the document body
+        document.body.appendChild(iframe);
+    
+        // Redirect to "Loading 2 Abel and LiLy.html" after 5 seconds
+        setTimeout(function() {
+          window.location.href = "Loading 2 Abel and LiLy.html";
+        }, 5000);
+      }
+    </script>
+    
+  
+   
+
+<a href="">
+  <img src="Barnato park.PNG" alt="">
+</a>
+
+
+<a href="">
+  <img src="Berea park.PNG" alt="">
+</a>
+
+
+<a href="">
+  <img src="Joe slovo.PNG" alt="">
+</a>
+
+<a href="">
+  <img src="Tudhope ave.PNG" alt="">
+</a>
+
+  <a href="../1.html" style="position: absolute;top:500px;left: 600px;">
+    <input type="submit" value="Back">
+</a>
+    
+  </body>
+</html>
