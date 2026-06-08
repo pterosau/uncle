@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delay Example</title>
+	<script>
+		function delayNextPage() {
+			setTimeout(function() {
+				window.location.href = "next.html";
+			}, 30000); // 30 second delay
+		}
+	</script>
+</head>
+<body onload="delayNextPage()">
+	<h1>Welcome to the delay example!</h1>
+	<p>This page will be displayed for 30 seconds before redirecting to the next page.</p>
+</body>
+</html>
